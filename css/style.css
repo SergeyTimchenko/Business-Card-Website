@@ -1,0 +1,166 @@
+/*---General styles---*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+/*---header---*/
+header {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+  color: rgb(103, 100, 100);
+}
+.header__logo {
+  color: inherit;
+}
+
+/*---hero---*/
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.hero__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-gap: 20px;
+}
+.hero__about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero__title {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.hero__subtitle {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.hero__description {
+  margin-bottom: 20px;
+}
+.hero__links {
+  display: flex;
+}
+.hero__link {
+  margin-right: 10px;
+  font-size: 30px;
+  color: #000;
+  transition: color 0.3s;
+}
+.hero__link:hover {
+  color: rgb(40, 89, 137);
+}
+.hero__box {
+  max-width: 500px;
+  justify-self: center;
+  overflow: hidden;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  border: 10px solid #fff;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+
+  animation: ave-animate 5s infinite alternate;
+}
+
+.hero__box-img {
+  animation: ave-bg 3s infinite alternate;
+}
+
+/*---animation---*/
+@keyframes ave-animate {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  40% {
+    border-radius: 63% 37% 78% 22% / 48% 66% 34% 52%;
+  }
+
+  60% {
+    border-radius: 43% 57% 20% 80% / 19% 66% 34% 81%;
+  }
+
+  100% {
+    border-radius: 30% 70% 20% 80% / 90% 13% 87% 10%;
+  }
+}
+
+@keyframes ave-bg {
+  from {
+    backdrop-filter: hue-rotate(0);
+  }
+
+  to {
+    backdrop-filter: hue-rotate(90deg);
+  }
+}
+
+/*---Media queries---*/
+@media screen and (max-width: 978px) {
+  .hero {
+    padding-top: 30px;
+  }
+  .hero__container {
+    grid-row-gap: 20px;
+  }
+  .hero__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .hero__subtitle {
+    font-size: 22px;
+    font-weight: 400;
+  }
+  .hero__description {
+    font-size: 14px;
+  }
+  .hero__about {
+    text-align: center;
+  }
+  .hero__links {
+    justify-content: center;
+  }
+  .hero__box {
+    max-width: 350px;
+  }
+}
